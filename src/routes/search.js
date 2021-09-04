@@ -13,13 +13,14 @@ router.get("/allsearch/:word", (req, res) => {
     });
 });
 
-router.get("/allSearch/:search", (req, res) => {
+router.get("/search/:search", (req, res) => {
   Search.updateOne(
     { _id: req.params.search },
     { $inc: { count: 1 } },
     function (err, res) {
       if (err) console.log(err);
       console.log("1 document updated");
+      
     }
   );
   Search.findOne({ _id: req.params.search })
