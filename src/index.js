@@ -30,6 +30,6 @@ app.use(express.json());
 // app.use(require("./routes/post"));
 app.use(require("./routes/search"));
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
   console.log("Server is running on Port", PORT);
 });
